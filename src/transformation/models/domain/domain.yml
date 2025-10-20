@@ -1,0 +1,111 @@
+version: 2
+
+models:
+  - name: dmn_starships
+    description: "Domain table for starships data, combining films, starships, and their relationships."
+    columns:
+      - name: episode_number
+        description: "Episode number of the film in the Star Wars series."
+        tests:
+          - unique
+          - not_null
+      - name: title
+        description: "Title of the film."
+        tests:
+          - not_null
+      - name: url
+        description: "URL of the starship associated with the film."
+        tests:
+          - not_null
+      - name: starships_name
+        description: "Name of the starship."
+        tests:
+          - not_null
+
+  - name: dmn_film_finances
+    description: "Domain table for film financial data, combining metadata and additional financial details."
+    columns:
+      - name: episode_number
+        description: "Episode number of the film in the Star Wars series."
+        tests:
+          - not_null
+      - name: title
+        description: "Title of the film."
+        tests:
+          - not_null
+      - name: director
+        description: "Director of the film."
+      - name: release_date
+        description: "Release date of the film."
+      - name: description
+        description: "Description of the film."
+      - name: run_time
+        description: "Runtime of the film in minutes."
+      - name: budget
+        description: "Budget of the film in USD."
+      - name: box_office
+        description: "Box office revenue of the film in USD."
+      - name: tomato_meter
+        description: "Rotten Tomatoes critic score for the film."
+      - name: popcorn_meter
+        description: "Rotten Tomatoes audience score for the film."
+
+  - name: dmn_characters
+    description: "Domain table for characters data, combining films and their associated characters."
+    columns:
+      - name: episode_number
+        description: "Episode number of the film in the Star Wars series."
+        tests:
+          - not_null
+      - name: title
+        description: "Title of the film."
+        tests:
+          - not_null
+      - name: url
+        description: "URL of the character associated with the film."
+        tests:
+          - not_null
+      - name: characters_name
+        description: "Name of the character."
+        tests:
+          - not_null
+
+  - name: dmn_planets
+    description: "Domain table for planets data, combining films and their associated planets."
+    columns:
+      - name: episode_number
+        description: "Episode number of the film in the Star Wars series."
+        tests:
+          - not_null
+      - name: title
+        description: "Title of the film."
+        tests:
+          - not_null
+      - name: url
+        description: "URL of the planet associated with the film."
+        tests:
+          - not_null
+      - name: planets_name
+        description: "Name of the planet."
+        tests:
+          - not_null
+
+  - name: dmn_species
+    description: "Domain table for species data, combining films and their associated species."
+    columns:
+      - name: episode_number
+        description: "Episode number of the film in the Star Wars series."
+        tests:
+          - not_null
+      - name: title
+        description: "Title of the film."
+        tests:
+          - not_null
+      - name: url
+        description: "URL of the species associated with the film."
+        tests:
+          - not_null
+      - name: species_name
+        description: "Name of the species."
+        tests:
+          - not_null

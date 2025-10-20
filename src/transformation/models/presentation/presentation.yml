@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: prst_film_summary
+    description: "Presentation table summarizing film details, including financial and runtime information."
+    columns:
+      - name: episode_number
+        description: "Episode number of the film in the Star Wars series."
+        tests:
+          - not_null
+      - name: title
+        description: "Title of the film."
+        tests:
+          - not_null
+      - name: director
+        description: "Director of the film."
+      - name: release_date
+        description: "Release date of the film."
+      - name: run_time
+        description: "Runtime of the film in minutes."
+      - name: budget
+        description: "Budget of the film in USD."
+      - name: box_office
+        description: "Box office revenue of the film in USD."
+      - name: profit
+        description: "Profit of the film, calculated as box office revenue minus budget."
+      - name: tomato_meter
+        description: "Rotten Tomatoes critic score for the film."
+      - name: popcorn_meter
+        description: "Rotten Tomatoes audience score for the film."
+

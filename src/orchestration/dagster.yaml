@@ -1,0 +1,5 @@
+storage:
+  sqlite:
+    base_dir: "/Users/eric.thanenthiran/sandbox/pystack/telemetry/dagster"
+telemetry:
+    enabled: false

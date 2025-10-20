@@ -1,0 +1,146 @@
+version: 2
+
+models:
+  - name: stg_cast
+    description: "Staging table for cast data extracted from the 'pystack.people' source."
+    columns:
+      - name: uid
+        description: "Unique identifier for the cast member."
+        tests:
+          - not_null
+          - unique
+      - name: name
+        description: "Name of the cast member."
+        tests:
+          - not_null
+      - name: url
+        description: "URL associated with the cast member."
+        tests:
+          - not_null
+      - name: dlt_id
+        description: "Internal DLT identifier for tracking data lineage."
+        tests:
+          - not_null
+
+  - name: stg_film_metadata
+    description: "Staging table for film metadata extracted from the 'pystack.star_wars_film_metadata' source."
+    columns:
+      - name: film
+        description: "Unique identifier for the film."
+        tests:
+          - not_null
+          - unique
+      - name: run_time
+        description: "Runtime of the film in minutes."
+      - name: budget
+        description: "Budget of the film in USD."
+      - name: box_office
+        description: "Box office revenue of the film in USD."
+      - name: tomato_meter
+        description: "Rotten Tomatoes critic score for the film."
+      - name: popcorn_meter
+        description: "Rotten Tomatoes audience score for the film."
+
+  - name: stg_films
+    description: "Staging table for films data extracted from the 'pystack.films' source."
+    columns:
+      - name: uid
+        description: "Unique identifier for the film."
+        tests:
+          - not_null
+          - unique
+      - name: producer
+        description: "Producer of the film."
+      - name: title
+        description: "Title of the film."
+        tests:
+          - not_null
+      - name: episode_number
+        description: "Episode number of the film in the Star Wars series."
+      - name: director
+        description: "Director of the film."
+      - name: release_date
+        description: "Release date of the film."
+      - name: opening_crawl
+        description: "Opening crawl text of the film."
+      - name: url
+        description: "URL associated with the film."
+      - name: dlt_load_id
+        description: "Internal DLT load identifier for tracking data lineage."
+      - name: dlt_id
+        description: "Internal DLT identifier for tracking data lineage."
+
+  - name: stg_films_species
+    description: "Staging table for species data associated with films, extracted from the 'pystack.films__properties__species' source."
+    columns:
+      - name: url
+        description: "URL of the species."
+      - name: parent_id
+        description: "Parent identifier for the species."
+      - name: dlt_id
+        description: "Internal DLT identifier for tracking data lineage."
+
+  - name: stg_planets
+    description: "Staging table for planets data extracted from the 'pystack.planets' source."
+    columns:
+      - name: uid
+        description: "Unique identifier for the planet."
+        tests:
+          - not_null
+          - unique
+      - name: name
+        description: "Name of the planet."
+      - name: url
+        description: "URL associated with the planet."
+      - name: dlt_id
+        description: "Internal DLT identifier for tracking data lineage."
+
+  - name: stg_films_starships
+    description: "Staging table for starships data associated with films, extracted from the 'pystack.films__properties__starships' source."
+    columns:
+      - name: url
+        description: "URL of the starship."
+      - name: parent_id
+        description: "Parent identifier for the starship."
+      - name: dlt_id
+        description: "Internal DLT identifier for tracking data lineage."
+
+  - name: stg_starships
+    description: "Staging table for starships data extracted from the 'pystack.starships' source."
+    columns:
+      - name: uid
+        description: "Unique identifier for the starship."
+        tests:
+          - not_null
+          - unique
+      - name: name
+        description: "Name of the starship."
+      - name: url
+        description: "URL associated with the starship."
+      - name: dlt_id
+        description: "Internal DLT identifier for tracking data lineage."
+
+  - name: stg_films_planets
+    description: "Staging table for planets data associated with films, extracted from the 'pystack.films__properties__planets' source."
+    columns:
+      - name: url
+        description: "URL of the planet."
+      - name: parent_id
+        description: "Parent identifier for the planet."
+      - name: dlt_id
+        description: "Internal DLT identifier for tracking data lineage."
+
+  - name: stg_species
+    description: "Staging table for species data extracted from the 'pystack.species' source."
+    columns:
+      - name: uid
+        description: "Unique identifier for the species."
+        tests:
+          - not_null
+          - unique
+      - name: name
+        description: "Name of the species."
+      - name: url
+        description: "URL associated with the species."
+      - name: dlt_id
+        description: "Internal DLT identifier for tracking data lineage."

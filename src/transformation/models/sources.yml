@@ -1,0 +1,57 @@
+sources:
+   - name : pystack
+     database: pystack
+     schema: sources
+     tables :
+      - name : films
+        identifier : films
+        description: "Films from the Star Wars universe"
+        meta:
+          dagster:
+            asset_key: ['dlt_rest_api_films']
+      - name : people
+        identifier : people
+        description: "People from the Star Wars universe"
+        meta:
+          dagster:
+            asset_key: ['dlt_rest_api_people']
+      - name : planets
+        identifier : planets
+        description: "Planets from the Star Wars universe"
+        meta:
+          dagster:
+            asset_key: ['dlt_rest_api_planets']
+      - name : species
+        identifier : species
+        description: "Species from the Star Wars universe"
+        meta:
+          dagster:
+            asset_key: ['dlt_rest_api_species']
+      - name : starships
+        identifier : starships
+        description: "Starships from the Star Wars universe"
+        meta:
+          dagster:
+            asset_key: ['dlt_rest_api_starships']
+      - name : films__properties__species
+        identifier : films__properties__species
+        description: "Species from the Star Wars universe"
+        meta:
+          dagster:
+            asset_key: ['dlt_rest_api_films__properties__species']
+      - name: star_wars_film_metadata
+        identifier: star_wars_film_metadata
+        description: "Star Wars film metadata"
+        meta:
+          dagster:
+            asset_key: ['dlt_star_wars_file_source_star_wars_film_metadata']
+      - name : films__properties__starships
+        identifier : films__properties__starships
+        description: "Starships from the Star Wars universe"
+      - name : films__properties__planets
+        identifier : films__properties__planets
+        description: "Planets from the Star Wars universe"
+      - name : films__properties__characters
+        identifier : films__properties__characters
+        description: "Characters from the Star Wars universe"
+
