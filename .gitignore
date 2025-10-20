@@ -21,6 +21,10 @@ src/transformation/dbt_modules/
 src/transformation/.user.yml
 src/transformation/profiles.yml
 
+# libraries
+telemetry/
+
+
 # Envs
 .venv
 
